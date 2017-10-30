@@ -1,0 +1,17 @@
+<launch>
+  <group ns = "output">
+    <param name="signs_topic" value="/signs_topic" />
+    <param name="serial_topic" value="serial_topic" />
+
+      <param name="xml_hand" value="$(find parloma_driver)/xml/robot_hand.xml" />
+      <param name="xml_signs" value="$(find parloma_driver)/xml/signs2pose.xml" />
+      <param name="xml_commands" value="$(find parloma_driver)/xml/commands_list.xml" />
+    <node name="calibration" pkg="parloma_driver" type="calibration.py" output = "screen">
+    </node>
+
+    <node name="hand" pkg="serial_bridge" type="serial_node.py">
+      <param name="port" value="/dev/tty.usbmodem1421" />
+      <param name="baudrate" value="9600" />
+    </node>
+  </group>
+</launch>

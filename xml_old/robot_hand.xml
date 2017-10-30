@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2014 Politecnico di Torino
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    This software is developed within the PARLOMA project, which aims
+    at developing a communication system for deaf-blind people (www.parloma.com)
+    The PARLOMA project is developed within the Turin node of AsTech laboratories
+    network sponsored by Consorzio Interuniversitario Nazionale di Informatica
+	 (CINI, www.consorzio-cini.it, www.consorzio-cini.it/index.php/en/lab-astech)
+
+    Contributors:
+        Giuseppe Airò Farulla (giuseppe.airofarulla@polito.it)
+-->
+
+<!-- This xml refers to the schema for 3D-printed PARLOMA right hand developed by Andrea Bulgarelli. -->
+<robot>
+	<information type="array">
+		<!-- For each joint, we need to know if it is implemented in the robot, its working range (in percentage from 0 to 1), 
+			 its rest position (only for ab-adduction or in any case when the joint working range is from -1 to 1) 
+			 and where it is located with respect to the others 
+			 (i.e., which is the code to which we have to send the commands for that joint).
+			 For MCP, rest position is intended as finger totally extended, for thumb is intended as finger parallel to the others.
+        -->
+		<value>implemented</value>
+		<value>minrange</value>
+		<value>maxrange</value>
+		<value>restposition</value>
+		<value>code</value>
+	</information>
+
+	<hands>
+        <!-- Maximum joint value is expressed as percentage wrt range and is always +1.-->
+        <!-- Minimum value can be 0 or 1 (latter case when 0 is the rest position).-->
+
+		<left />
+
+		<right type="array" kinematic="False">
+			<!-- This array specifies the joints we are taking into consideration for right hand. -->
+			<joint name_id="thumb_PIP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="thumb_MCP">
+                <minvalue>0</minvalue>
+				<implemented>True</implemented>
+				<minrange>10</minrange>
+				<maxrange>170</maxrange>
+				<restposition>-1</restposition>
+				<code>0</code>
+			</joint>
+
+			<joint name_id="thumb_MCP_A">
+                <minvalue>-1</minvalue>
+				<implemented>True</implemented>
+				<minrange>10</minrange>
+				<maxrange>170</maxrange>
+				<restposition>100</restposition>
+				<code>5</code>
+			</joint>
+
+			<joint name_id="pinky_PIP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="pinky_MCP">
+                <minvalue>0</minvalue>
+				<implemented>True</implemented>
+				<minrange>10</minrange>
+				<maxrange>180</maxrange>
+				<restposition>-1</restposition>
+				<code>4</code>
+			</joint>
+
+			<joint name_id="pinky_MCP_A">
+                <minvalue>-1</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="ring_PIP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="ring_MCP">
+                <minvalue>0</minvalue>
+				<implemented>True</implemented>
+				<minrange>10</minrange>
+				<maxrange>170</maxrange>
+				<restposition>-1</restposition>
+				<code>3</code>
+			</joint>
+
+			<joint name_id="ring_MCP_A">
+                <minvalue>-1</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="middle_PIP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="middle_PIP">
+                <minvalue>0</minvalue>
+				<implemented>True</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>-1</restposition>
+				<code>2</code>
+			</joint>
+
+			<joint name_id="middle_MCP_A">
+                <minvalue>-1</minvalue>
+				<implemented>True</implemented>
+				<minrange>50</minrange>
+				<maxrange>150</maxrange>
+				<restposition>90</restposition>
+				<code>7</code>
+			</joint>
+
+			<joint name_id="index_PIP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="index_MCP">
+                <minvalue>0</minvalue>
+				<implemented>True</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>-1</restposition>
+				<code>1</code>
+			</joint>
+
+			<joint name_id="index_MCP_A">
+                <minvalue>-1</minvalue>
+				<implemented>True</implemented>
+				<minrange>30</minrange>
+				<maxrange>130</maxrange>
+				<restposition>80</restposition>
+				<code>6</code>
+			</joint>
+
+			<joint name_id="thumb_CP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="tpinky_CP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="ring_CP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="middle_CP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="index_CP">
+                <minvalue>0</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="palm">
+                <minvalue>-1</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="palm_E">
+                <minvalue>-1</minvalue>
+				<implemented>False</implemented>
+				<minrange>0</minrange>
+				<maxrange>180</maxrange>
+				<restposition>0</restposition>
+				<code>-1</code>
+			</joint>
+
+			<joint name_id="wrist">
+                <minvalue>-1</minvalue>
+				<implemented>True</implemented>
+				<minrange>30</minrange>
+				<maxrange>180</maxrange>
+				<restposition>90</restposition>
+				<code>8</code>
+			</joint>
+		</right>
+	</hands>
+
+	<arms />
+
+</robot>

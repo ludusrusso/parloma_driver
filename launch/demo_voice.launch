@@ -1,0 +1,8 @@
+<launch>
+  <group ns = "output_voice">
+    <param name="signs_topic" value="/signs_topic" />
+
+    <node name="voice" pkg="parloma_driver" type="voice_driver.py">
+    </node>
+  </group>
+</launch>

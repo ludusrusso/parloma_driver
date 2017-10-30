@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Copyright (C) 2014 Politecnico di Torino
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    This software is developed within the PARLOMA project, which aims
+    at developing a communication system for deaf-blind people (www.parloma.com)
+    The PARLOMA project is developed within the Turin node of AsTech laboratories
+    network sponsored by Consorzio Interuniversitario Nazionale di Informatica
+	 (CINI, www.consorzio-cini.it, www.consorzio-cini.it/index.php/en/lab-astech)
+
+    Contributors:
+        Giuseppe Airò Farulla (giuseppe.airofarulla@polito.it)
+-->
+
+<!-- This xml lists the equivalence commands-codes that are accepted by the robotic hand. -->
+<!-- This xml refers to the schema for 3D-printed PARLOMA right hand developed by Andrea Bulgarelli. -->
+<commands>
+	<list type="array">
+		<!-- This array specifies the commands we are taking in consideration for each robotic limb. -->
+		<value>set_all_motors</value>
+		<value>set_one_motor</value>
+		<value>read_all_motors</value>
+		<value>read_one_motor</value>
+		<value>reset_all_motors</value>
+		<value>reset_one_motor</value>
+		<value>test_all_motors</value>
+		<value>test_one_motor</value>
+		<value>save_all_motors</value>
+		<value>save_one_motor</value>
+	</list>
+
+	<codes type="array">
+		<!-- This array specifies the corresponding codes for 3D-printed PARLOMA right hand developed by Andrea Bulgarelli.
+			 Code equal to -1 means that the corresponding command is not supported by the firmware controlling the hand.
+		-->
+		<set_all_motors>241</set_all_motors>
+		<set_one_motor>242</set_one_motor>
+		<read_all_motors>243</read_all_motors>
+		<read_one_motor>244</read_one_motor>
+		<reset_all_motors>245</reset_all_motors>
+		<reset_one_motor>-1</reset_one_motor>
+		<test_all_motors>246</test_all_motors>
+		<test_one_motor>-1</test_one_motor>
+		<save_all_motors>247</save_all_motors>
+		<save_one_motor>-1</save_one_motor>
+	</codes>
+</commands>

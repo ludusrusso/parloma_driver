@@ -1,0 +1,13 @@
+<launch>
+  <group ns = "output">
+    <param name="signs_topic" value="/signs_topic" />
+    <param name="serial_topic" value="serial_topic" />
+
+    <node name="calibration" pkg="parloma_driver" type="calibration.py" output ="screen">
+      <param name="xml_hand" value="$(find parloma_driver)/xml/robot_hand.xml" />
+      <param name="xml_signs" value="$(find parloma_driver)/xml/signs2pose.xml" />
+      <param name="xml_commands" value="$(find parloma_driver)/xml/commands_list.xml" />
+    </node>
+
+  </group>
+</launch>
